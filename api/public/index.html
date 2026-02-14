@@ -74,8 +74,8 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // API URL
-      const API_URL = "/api";
+      // API URL - use /auth-api when accessed via proxy, /api when direct
+      const API_URL = window.location.pathname.includes('/usermanagement') ? "/auth-api" : "/api";
       
       // DOM Elements
       const userForm = document.getElementById("userForm");
